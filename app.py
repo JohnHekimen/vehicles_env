@@ -4,7 +4,7 @@ import plotly.express as px
 
 car_data = pd.read_csv('vehicles_us.csv') # lendo os dados
 
-st.header('Análise Exploratória de Dados para anúncios de vendas de carros') # título da página
+st.header('Análise Dados para anúncios de vendas de carros') # título da página
 
 hist_button = st.button('Criar histograma') # botão para criar histograma
 scatter_button = st.button('Criar gráfico de dispersão') # botão para criar gráfico de dispersão
