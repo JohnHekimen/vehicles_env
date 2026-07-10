@@ -17,7 +17,7 @@ if hist_button: # Se o botão for clicado
         x="odometer"
     ) # criar um histograma
 
-    st.plotly_chart(fig, use_container_width=True) # exibindo o histograma
+    st.plotly_chart(fig, width="stretch") # exibindo o histograma
 
 if scatter_button: # Se o botão for clicado
     st.write('Criando um gráfico de dispersão para o conjunto de dados de anúncios de vendas de carros')
@@ -27,4 +27,4 @@ if scatter_button: # Se o botão for clicado
         x='odometer',
         y='price'
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
