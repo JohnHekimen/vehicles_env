@@ -8,15 +8,25 @@ car_data = pd.read_csv('vehicles_us.csv') # lendo os dados
 
 hist_button = st.checkbox('Criar histograma') # botão para criar histograma
 
-grafico = st.selectbox(
-     'Escolha o gráfico que deseja visualizar', 
-    ['Histograma', 'Gráfico de dispersão', 'Gráfico de barras']
-) # menu suspenso para escolher o gráfico
+if hist_button: # Se o botão for clicado
+    st.write('Criando um histograma para o conjunto de dados de anúncios de vendas de carros')
 
-if grafico == 'Histograma':
-    fig = px.histogram(car_data, x="odometer")
+    fig = px.histogram(
+        car_data, 
+        x="odometer"
+    ) # criar um histograma
 
-else:
-    fig = px.scatter(car_data, x="odometer", y="price")
+    st.plotly_chart(fig, width="stretch") # exibindo o histograma
 
-st.plotly_chart(fig, width="stretch") # exibindo o gráfico
+
+scatter_button = st.checkbox('Criar gráfico de dispersão') # botão para criar gráfico de dispersão
+
+if scatter_button: # Se o botão for clicado
+    st.write('Criando um gráfico de dispersão para o conjunto de dados de anúncios de vendas de carros')
+
+    fig = px.scatter(
+        car_data,
+        x='odometer',
+        y='price'
+    )
+    st.plotly_chart(fig, width="stretch")
